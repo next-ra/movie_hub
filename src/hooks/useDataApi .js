@@ -28,7 +28,6 @@ const useDataApi = () => {
         setIsError(
           error?.response?.data?.status_message || 'Что-то пошло не так!',
         );
-        console.log(error);
       }
 
       setIsLoading(false);

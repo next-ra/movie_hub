@@ -35,7 +35,7 @@ const Search = () => {
     },
     [page, type],
   );
-  console.log(data);
+
   const items = data?.results?.map((c) => (
     <SingleContent
       key={c.id}
