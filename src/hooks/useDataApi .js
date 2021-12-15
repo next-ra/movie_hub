@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-const useDataApi = (flag) => {
+const useDataApi = () => {
   const [url, setUrl] = useState(null);
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -23,7 +23,7 @@ const useDataApi = (flag) => {
         if (isActive) {
           setData(data);
           setNumOfPages(data.total_pages || 0);
-        } else console.log('aborted setState on unmounted component');
+        }
       } catch (error) {
         setIsError(
           error?.response?.data?.status_message || 'Что-то пошло не так!',
@@ -37,10 +37,8 @@ const useDataApi = (flag) => {
     fetchData();
     return () => {
       isActive = false;
-      // setData([]);
-      console.log(`unmounted`, flag);
     };
-  }, [url, flag]);
+  }, [url]);
 
   return [
     { data, numOfPages, isLoading, isError },

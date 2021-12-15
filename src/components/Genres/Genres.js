@@ -44,7 +44,7 @@ const Genres = ({
             color="secondary"
             clickable
             label={g.name}
-            sx={{ m: 0.1 }}
+            sx={{ m: 0.3 }}
             onDelete={() => removeHandler(g)}
             onClick={() => {
               removeHandler(g);
@@ -59,10 +59,7 @@ const Genres = ({
             variant="outlined"
             clickable
             label={g.name}
-            sx={{
-              m: 1,
-              // border: ` 2px solid #ff3b83`,
-            }}
+            sx={{ m: 0.3 }}
             onClick={() => addHandler(g)}
           />
         ))}

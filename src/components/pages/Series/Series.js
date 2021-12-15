@@ -39,6 +39,14 @@ const Series = () => {
         setPage={setPage}
       />
 
+      {!loading && numOfPages > 1 && !error && (
+        <CustomPagination
+          numberOfPages={numOfPages}
+          setPage={setPage}
+          page={page}
+        />
+      )}
+      {error && <Error error={error} />}
       <Wrapper>
         {loading && <Preloader />}
         {error && <Error />}

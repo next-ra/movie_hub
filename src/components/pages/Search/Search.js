@@ -31,7 +31,7 @@ const Search = () => {
     (query) => {
       return `${baseUrl}search/${
         type ? 'tv' : 'movie'
-      }?${key}&language=en-US&query=${query}&page=${page}&include_adult=false`;
+      }?${key}&languag e=en-US&query=${query}&page=${page}&include_adult=false`;
     },
     [page, type],
   );
@@ -120,7 +120,7 @@ const Search = () => {
           numberOfPages={numOfPages}
         />
       )}
-
+      {isError && <Error error={isError} />}
       <Wrapper>
         {isLoading && <Preloader />}
         <NotFound
@@ -129,7 +129,7 @@ const Search = () => {
           results={data.total_results}
           error={isError}
         />
-        {isError && <Error error={isError} />}
+
         {!isLoading && !isError && items}
       </Wrapper>
       {numOfPages > 1 && !isLoading && (

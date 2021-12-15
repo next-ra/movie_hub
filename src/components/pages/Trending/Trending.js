@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import useMovieDbApi from '../../../hooks/useMovieDbApi';
 
 import Error from '../../Error/Error';
 import CustomPagination from '../../Pagination/CustomPagination';
@@ -9,10 +8,11 @@ import SingleContent from '../../SingleContent/SingleContent';
 import { baseUrl, key } from '../../../config/config';
 import Wrapper from '../../UI/Wrapper';
 import Title from '../../UI/Title';
+import useDataApi from '../../../hooks/useDataApi ';
 const Trending = () => {
   const [page, setPage] = useState(1);
 
-  const [{ data, isLoading, isError }, setUrl] = useMovieDbApi();
+  const [{ data, isLoading, isError }, setUrl] = useDataApi();
 
   useEffect(() => {
     setUrl(`${baseUrl}trending/all/day?${key}&language=ru&page=${page}`);
@@ -22,11 +22,10 @@ const Trending = () => {
     <div>
       <Title title="В тренде" />
       {!isError && <CustomPagination setPage={setPage} page={page} />}
-
+      {isError && <Error error={isError} />}
       <Wrapper>
         {isLoading && <Preloader />}
 
-        {isError && <Error error={isError} />}
         {data &&
           !isLoading &&
           data.results?.map((c) => (
