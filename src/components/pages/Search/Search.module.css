@@ -1,0 +1,11 @@
+.search {
+  display: flex;
+  margin: 15px auto;
+  max-width: 500px;
+}
+
+.tabs {
+  display: flex;
+  margin: 15px auto;
+  max-width: 500px;
+}

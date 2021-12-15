@@ -1,0 +1,85 @@
+.card {
+  display: flex;
+}
+
+.poster-box {
+  width: 50%;
+  min-width: 320px;
+  max-width: 450px;
+  display: flex;
+}
+
+.poster {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  max-height: 675px;
+}
+
+.info {
+  width: 100%;
+  box-shadow: inset -1px 3px 13px rgba(44, 43, 43, 0.5);
+}
+
+.title-container {
+  padding: 1vw;
+  background: #9f5eff;
+}
+.title {
+  font-size: clamp(16px, 3vw, 24px);
+  text-shadow: 1px 1px 4px rgb(68, 68, 68);
+}
+.orginal-title {
+  font-size: clamp(14px, 2vw, 20px);
+  color: #000;
+  text-shadow: 1px 1px 4px rgb(63, 62, 62);
+}
+
+.box {
+  padding: 1vw;
+}
+.tag {
+  margin-bottom: 1vw;
+  font-size: clamp(14px, 2vw, 20px);
+}
+
+.overview {
+  overflow-y: scroll;
+  margin-bottom: 1vw;
+  padding: 1vw;
+  max-height: 60%;
+  box-shadow: inset -1px 3px 13px rgba(44, 43, 43, 0.5);
+  border-radius: 4px;
+  font-size: clamp(14px, 2vw, 18px);
+  background: #ffa726;
+  color: #000;
+}
+.overview::-webkit-scrollbar {
+  display: none;
+}
+
+.backdrop {
+  display: none;
+}
+@media screen and (max-width: 750px) {
+  .card {
+    flex-direction: column;
+    width: 100%;
+  }
+  .poster-box {
+    width: 100%;
+    max-width: 100%;
+  }
+  .backdrop {
+    display: flex;
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+  }
+  .poster {
+    display: none;
+  }
+  .overview {
+    max-height: 140px;
+  }
+}

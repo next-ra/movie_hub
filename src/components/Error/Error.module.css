@@ -1,0 +1,20 @@
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+  color: red;
+}
+
+.modal-message {
+  font-size: clamp(15px, 3vw, 24px);
+}
+
+.msg {
+  font-size: clamp(15px, 4vw, 32px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

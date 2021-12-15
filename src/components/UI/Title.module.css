@@ -1,0 +1,7 @@
+.title {
+  margin-top: 1vw;
+  display: flex;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: clamp(18px, 6vw, 30px);
+}
