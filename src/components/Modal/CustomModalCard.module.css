@@ -47,7 +47,7 @@
   overflow-y: auto;
   margin-bottom: 1vw;
   padding: 0.7vw;
-  max-height: 365px;
+  max-height: 320px;
   box-shadow: inset -1px 3px 13px rgba(44, 43, 43, 0.5);
   border-radius: 4px;
   font-size: clamp(14px, 2vw, 20px);
