@@ -1,5 +1,6 @@
 .card {
   display: flex;
+  height: inherit;
 }
 
 .poster-box {
@@ -12,7 +13,6 @@
 .poster {
   object-fit: cover;
   width: 100%;
-  height: 100%;
   max-height: 675px;
 }
 
@@ -22,35 +22,35 @@
 }
 
 .title-container {
-  padding: 1vw;
+  padding: 0.7vw;
   background: #9f5eff;
 }
 .title {
-  font-size: clamp(16px, 3vw, 24px);
+  font-size: clamp(16px, 2.5vw, 24px);
   text-shadow: 1px 1px 4px rgb(68, 68, 68);
 }
 .orginal-title {
-  font-size: clamp(14px, 2vw, 20px);
+  font-size: clamp(14px, 1.5vw, 20px);
   color: #000;
   text-shadow: 1px 1px 4px rgb(63, 62, 62);
 }
 
 .box {
-  padding: 1vw;
+  padding: 0.7vw;
 }
 .tag {
-  margin-bottom: 1vw;
-  font-size: clamp(14px, 2vw, 20px);
+  margin-bottom: 0.7vw;
+  font-size: clamp(14px, 1.5vw, 20px);
 }
 
 .overview {
-  overflow-y: scroll;
+  overflow-y: auto;
   margin-bottom: 1vw;
-  padding: 1vw;
-  max-height: 60%;
+  padding: 0.7vw;
+  max-height: 365px;
   box-shadow: inset -1px 3px 13px rgba(44, 43, 43, 0.5);
   border-radius: 4px;
-  font-size: clamp(14px, 2vw, 18px);
+  font-size: clamp(14px, 2vw, 20px);
   background: #ffa726;
   color: #000;
 }

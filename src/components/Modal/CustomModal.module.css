@@ -4,9 +4,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90%;
+  width: 90vw;
   max-width: 1200px;
-
+  max-height: 90vh;
   border-radius: 12px;
   overflow: hidden;
   background: #2e2e2e;
@@ -23,7 +23,7 @@
 
 @media screen and (max-width: 750px) {
   .wrapper {
-    max-width: 95%;
+    max-width: 95vw;
   }
 
   .slider {
