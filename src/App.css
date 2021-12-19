@@ -12,3 +12,9 @@
   max-width: 1440px;
   margin: 0 auto;
 }
+
+@media screen and (max-height: 600px) {
+  .App {
+    padding: 40px 0;
+  }
+}

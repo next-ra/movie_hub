@@ -6,6 +6,7 @@ import MainNav from './components/MainNav';
 import Movies from './components/pages/Movies/Movies';
 import Search from './components/pages/Search/Search';
 import Series from './components/pages/Series/Series';
+
 import Trending from './components/pages/Trending/Trending';
 
 function App() {

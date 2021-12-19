@@ -1,6 +1,6 @@
 .header {
   width: 100vw;
-  min-height: 60px;
+  height: 60px;
   cursor: pointer;
   position: fixed;
   display: flex;
@@ -16,4 +16,11 @@
 
   color: #fff;
   z-index: 100;
+}
+
+@media screen and (max-height: 600px) {
+  .header {
+    height: 40px;
+    font-size: clamp(10px, 3vw, 18px);
+  }
 }

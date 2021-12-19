@@ -1,0 +1,14 @@
+.tags {
+  padding-left: 0.7vw;
+  margin-bottom: 0.7vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.tag {
+  font-size: clamp(14px, 1.5vw, 20px);
+}
+
+.hide {
+  display: none;
+}

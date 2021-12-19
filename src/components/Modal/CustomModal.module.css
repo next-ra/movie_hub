@@ -4,29 +4,47 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90vw;
-  max-width: 1200px;
+  width: 95vw;
+  max-width: 1400px;
   max-height: 90vh;
   border-radius: 12px;
   overflow: hidden;
   background: #2e2e2e;
   position: relative;
   color: rgb(255, 255, 255);
-  box-shadow: 6px 8px 20px 8px black;
+  box-shadow: 0 0 20px 9px rgb(0 0 0 / 50%);
+  border-radius: 10px;
 }
 
 .slider {
-  height: 140px;
   background: #9f5eff;
+  display: flex;
+  height: 140px;
+
   color: #000;
 }
 
 @media screen and (max-width: 750px) {
   .wrapper {
     max-width: 95vw;
+    max-height: 90vh;
   }
+}
 
+@media (max-height: 550px) {
   .slider {
-    height: 100px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 320px) {
+  .slider {
+    height: 70px;
+  }
+}
+
+@media (max-height: 320px) {
+  .slider {
+    display: none;
   }
 }

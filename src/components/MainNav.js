@@ -6,6 +6,7 @@ import BottomNavigation from '@mui/material/BottomNavigation';
 import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
+import styles from './MainNav.module.css';
 
 export default function SimpleBottomNavigation() {
   const [value, setValue] = useState(0);
@@ -16,6 +17,7 @@ export default function SimpleBottomNavigation() {
       else if (value === 1) navigate('/movies');
       else if (value === 2) navigate('/series');
       else if (value === 3) navigate('/search');
+      else if (value === 4) navigate('/test');
     };
     changePage();
   }, [value, navigate]);
@@ -23,16 +25,9 @@ export default function SimpleBottomNavigation() {
   return (
     <BottomNavigation
       showLabels
+      className={styles.nav}
       value={value}
       sx={{
-        background: '#9f5eff',
-        position: 'fixed',
-        left: 0,
-        bottom: 0,
-        width: '100vw',
-        boxShadow: `0px -3px 8px #000`,
-        height: `60px`,
-        zIndex: 100,
         '& .MuiBottomNavigationAction-root, .Mui-selected, svg': {
           color: 'black',
         },
@@ -45,10 +40,22 @@ export default function SimpleBottomNavigation() {
         setValue(newValue);
       }}
     >
-      <BottomNavigationAction label="В тренде" icon={<WhatshotIcon />} />
-      <BottomNavigationAction label="Фильмы" icon={<MovieIcon />} />
-      <BottomNavigationAction label="Сериалы" icon={<TvIcon />} />
-      <BottomNavigationAction label="Поиск" icon={<SearchIcon />} />
+      <BottomNavigationAction
+        label="Тренды"
+        icon={<WhatshotIcon fontSize="small" />}
+      />
+      <BottomNavigationAction
+        label="Фильмы"
+        icon={<MovieIcon fontSize="small" />}
+      />
+      <BottomNavigationAction
+        label="Сериалы"
+        icon={<TvIcon fontSize="small" />}
+      />
+      <BottomNavigationAction
+        label="Поиск"
+        icon={<SearchIcon fontSize="small" />}
+      />
     </BottomNavigation>
   );
 }

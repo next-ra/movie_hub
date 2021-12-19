@@ -3,6 +3,10 @@ import styles from './CustomModalCard.module.css';
 import CloseIcon from '@mui/icons-material/Close';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import Error from '../Error/Error';
+import CardImage from './Card/CardImage';
+import Tags from './Card/Tags';
+import CardTitle from './Card/CardTitle';
+import useMediaQuery from '../../hooks/UseMediaQuery';
 
 const CustomModalCard = ({ config }) => {
   const {
@@ -21,6 +25,11 @@ const CustomModalCard = ({ config }) => {
     vError,
   } = config;
 
+  const tablet = useMediaQuery(750);
+  const mobile = useMediaQuery(750, 549);
+
+  let src = mobile ? poster : tablet ? backdrop : poster;
+
   return (
     <div className={styles.card}>
       <Button
@@ -38,52 +47,37 @@ const CustomModalCard = ({ config }) => {
       >
         <CloseIcon />
       </Button>
-      <div className={styles[`poster-box`]}>
-        <img className={styles.poster} src={poster} alt={title} />
-        <img className={styles.backdrop} src={backdrop} alt={title} />
-      </div>
 
-      <div className={styles.info}>
-        {error && <Error error={error} modal />}
-        {!error && (
-          <div className={styles[`title-container`]}>
-            <h1 className={styles.title}>
-              {title}&nbsp;({year})
-            </h1>
-            <h3 className={styles[`orginal-title`]}>{originalTitle}</h3>
-          </div>
-        )}
-        {!error && (
-          <div className={styles.box}>
-            <p className={styles.tag}>
-              <b>рейтинг</b>: {vote_average || 'отсутсвует'}
-            </p>
-            <p className={styles.tag}>
-              <b>жанр</b>: {genres}
-            </p>
-            <p className={styles.tag}>
-              <b>слоган</b>: {tagline || 'отсутсвует'}
-            </p>
+      {(!tablet || mobile) && <CardImage src={src} title={title} />}
 
-            <p className={styles.overview}>
-              {overview || 'описание отсутствует'}
-            </p>
+      {error && <Error error={error} modal />}
 
-            {trailer && !vError && (
-              <Button
-                variant="contained"
-                color="secondary"
-                target="_blank"
-                startIcon={<YouTubeIcon />}
-                className={styles.trailer}
-                href={`https://youtube.com/watch?v=${trailer}`}
-              >
-                Tрейлер
-              </Button>
-            )}
-          </div>
-        )}
-      </div>
+      {!error && (
+        <div className={styles.box}>
+          {tablet && !mobile && <CardImage src={src} title={title} />}
+
+          <CardTitle title={title} originalTitle={originalTitle} year={year} />
+          <Tags vote_average={vote_average} genres={genres} tagline={tagline} />
+
+          <p className={styles.overview}>
+            {overview || 'описание отсутствует'}
+          </p>
+
+          {trailer && !vError && (
+            <Button
+              sx={{ maxWidth: 120, ml: '0.7vw', mb: '0.7vw' }}
+              variant="contained"
+              color="secondary"
+              target="_blank"
+              startIcon={<YouTubeIcon />}
+              className={styles.trailer}
+              href={`https://youtube.com/watch?v=${trailer}`}
+            >
+              Tрейлер
+            </Button>
+          )}
+        </div>
+      )}
     </div>
   );
 };

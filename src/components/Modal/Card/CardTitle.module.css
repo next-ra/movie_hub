@@ -1,0 +1,17 @@
+.title-container {
+  padding: 0.7vw;
+  margin-bottom: 0.7vw;
+  background: #9f5eff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.title {
+  font-size: clamp(16px, 2.5vw, 24px);
+  text-shadow: 1px 1px 4px rgb(68, 68, 68);
+}
+.orginal-title {
+  font-size: clamp(14px, 2vw, 20px);
+  color: #000;
+  text-shadow: 1px 1px 4px rgb(63, 62, 62);
+}
